@@ -18,15 +18,17 @@ function query($query) {
 function tambah($data) {
 	global $conn;
 
-	$nrp = htmlspecialchars($data["nrp"]);
 	$nama = htmlspecialchars($data["nama"]);
-	$email = htmlspecialchars($data["email"]);
-	$jurusan = htmlspecialchars($data["jurusan"]);
-	$gambar = htmlspecialchars($data["gambar"]);
+	$alamat = htmlspecialchars($data["alamat"]);
+	$pendidikan = htmlspecialchars($data["pendidikan"]);
+	$pekerjaan = htmlspecialchars($data["pekerjaan"]);
+	$jenis_kelamin = htmlspecialchars($data["jenis"]);
+	$status = htmlspecialchars($data["status"]);
 
-	$query = "INSERT INTO mahasiswa
+
+	$query = "INSERT INTO data_aaa
 				VALUES
-			  ('', '$nrp', '$nama', '$email', '$jurusan', '$gambar')
+			  ('', '$nama', '$alamat', '$pendidikan', '$pekerjaan', '$jenis_kelamin', '$status' )
 			";
 	mysqli_query($conn, $query);
 
@@ -36,36 +38,39 @@ function tambah($data) {
 
 function hapus($id) {
 	global $conn;
-	mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id");
+	mysqli_query($conn, "DELETE FROM data_aaa WHERE id = $id");
 	return mysqli_affected_rows($conn);
 }
 
 
 function ubah($data) {
 	global $conn;
+	
+$id = $data["id"];
 
-	$id = $data["id"];
-	$nrp = htmlspecialchars($data["nrp"]);
 	$nama = htmlspecialchars($data["nama"]);
-	$email = htmlspecialchars($data["email"]);
-	$jurusan = htmlspecialchars($data["jurusan"]);
-	$gambar = htmlspecialchars($data["gambar"]);
+	$alamat = htmlspecialchars($data["alamat"]);
+	$pendidikan = htmlspecialchars($data["pendidikan"]);
+	$pekerjaan = htmlspecialchars($data["pekerjaan"]);
+	$pekerjaan = htmlspecialchars($data["pekerjaan"]);
+	$jenis_kelamin = htmlspecialchars($data["jenis"]);
+	$status = htmlspecialchars($data["status"]);
 
-	$query = "UPDATE mahasiswa SET
-				nrp = '$nrp',
+	$query = "UPDATE data_aaa SET
 				nama = '$nama',
-				email = '$email',
-				jurusan = '$jurusan',
-				gambar = '$gambar'
+				alamat = '$alamat',
+				pendidikan = '$pendidikan',
+				pekerjaan = '$pekerjaan',
+				jenis_kelamin = '$jenis_kelamin',
+				statusz = '$status'
+
 			  WHERE id = $id
 			";
-	// var_dump($query); die;
+	//var_dump($query); die;
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);	
 }
-
-
 
 
 

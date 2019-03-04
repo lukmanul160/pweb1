@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Mar 2019 pada 04.58
+-- Waktu pembuatan: 04 Mar 2019 pada 08.00
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `pweb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `data_aaa`
+--
+
+CREATE TABLE `data_aaa` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `alamat` varchar(20) NOT NULL,
+  `pendidikan` varchar(20) NOT NULL,
+  `pekerjaan` varchar(20) NOT NULL,
+  `jenis_kelamin` varchar(20) NOT NULL,
+  `statusz` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `data_aaa`
+--
+
+INSERT INTO `data_aaa` (`id`, `nama`, `alamat`, `pendidikan`, `pekerjaan`, `jenis_kelamin`, `statusz`) VALUES
+(2, 'asddsasda', 'sadsdasd', 'sadsasaddsa', 'asdsdadasdsasaasddsa', 'wanita', 'saasdadsasdsadsa');
 
 -- --------------------------------------------------------
 
@@ -62,6 +85,12 @@ INSERT INTO `user` (`id`, `username`, `password`) VALUES
 --
 
 --
+-- Indeks untuk tabel `data_aaa`
+--
+ALTER TABLE `data_aaa`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
@@ -78,10 +107,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `data_aaa`
+--
+ALTER TABLE `data_aaa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

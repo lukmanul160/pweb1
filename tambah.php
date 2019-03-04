@@ -34,20 +34,26 @@ if( isset($_POST["submit"]) ) {
 
 	<form action="" method="post">
 
-				<label for="nrp">NRP : </label>
-				<input type="text" name="nrp" id="nrp" required><br>
-
 				<label for="nama">Nama : </label>
-				<input type="text" name="nama" id="nama"><br>
+				<input type="text" name="nama" id="nrp" required><br>
 
-				<label for="email">Email :</label>
-				<input type="text" name="email" id="email"><br>
+				<label for="alamat">Alamat : </label>
+				<input type="text" name="alamat" id="nama"><br>
 
-				<label for="jurusan">Jurusan :</label>
-				<input type="text" name="jurusan" id="jurusan"><br>
+				<label for="pendidikan">pendidikan :</label>
+				<input type="text" name="pendidikan" id="email"><br>
 
-				<label for="gambar">Gambar :</label>
-				<input type="file" name="gambar" id="gambar"><br>
+				<label for="pekerjaan">pekerjaan :</label>
+				<input type="text" name="pekerjaan" id="jurusan"><br>
+
+				<label for="jenis">Jenis Kaelamin :</label>
+					<input type="radio" name="jenis" value="pria">Pria&nbsp;
+					<input type="radio" name="jenis" value="wanita">wanita
+					<br>	
+
+					<label for="status">Status :</label>
+				<input type="status" name="status" id="email"><br>
+
 
 				<button type="submit" name="submit">Tambah Data!</button>
 

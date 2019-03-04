@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.4
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Mar 03, 2019 at 04:33 PM
+- Server version: 10.1.37-MariaDB
+- PHP Version: 5.6.39
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="uts" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="mahasiswa">
+                CREATE TABLE `mahasiswa` (
+                  `id` int(255) NOT NULL AUTO_INCREMENT,
+                  `nim` varchar(14) NOT NULL,
+                  `nama` varchar(255) NOT NULL,
+                  `email` varchar(255) NOT NULL,
+                  `jenis` varchar(255) NOT NULL,
+                  `prodi` varchar(255) NOT NULL,
+                  `sks` int(50) NOT NULL,
+                  `agama` varchar(255) NOT NULL,
+                  `alamat` varchar(255) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'uts'
+    -->
+    <database name="uts">
+        <!-- Table mahasiswa -->
+        <table name="mahasiswa">
+            <column name="id">1</column>
+            <column name="nim">09031381823122</column>
+            <column name="nama">chenfffwewew</column>
+            <column name="email">chendy.rizky63@gmail.com</column>
+            <column name="jenis">pria</column>
+            <column name="prodi">Sistem Informasi</column>
+            <column name="sks">23</column>
+            <column name="agama">Islam</column>
+            <column name="alamat">  hahaha</column>
+        </table>
+        <table name="mahasiswa">
+            <column name="id">22</column>
+            <column name="nim">smsmdb</column>
+            <column name="nama">msbdmsbdsm</column>
+            <column name="email">mdbmsdbm</column>
+            <column name="jenis">wanita</column>
+            <column name="prodi">Sistem Informasi</column>
+            <column name="sks">23</column>
+            <column name="agama">Islam</column>
+            <column name="alamat">23232</column>
+        </table>
+    </database>
+</pma_xml_export>

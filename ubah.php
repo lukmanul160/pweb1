@@ -5,8 +5,7 @@ require 'functions.php';
 $id = $_GET["id"];
 
 // query data mahasiswa berdasarkan id
-$mhs = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
-
+$mhs = query("SELECT * FROM data_aaa WHERE id = $id")[0];
 
 // cek apakah tombol submit sudah ditekan atau belum
 if( isset($_POST["submit"]) ) {
@@ -39,30 +38,41 @@ if( isset($_POST["submit"]) ) {
 <body>
 	<h1>Ubah data mahasiswa</h1>
 
+
+
 	<form action="" method="post">
-		<input type="hidden" name="id" value="<?= $mhs["id"]; ?>">
 
-				<label for="nrp">NRP : </label>
-				<input type="text" name="nrp" id="nrp" required value="<?= $mhs["nrp"]; ?>"><br>
+<input type="hidden" name="id" value="<?= $mhs["id"]; ?>">
 
-				<label for="nama">Nama : </label>
-				<input type="text" name="nama" id="nama" value="<?= $mhs["nama"]; ?>"><br>
+<label for="nama">Nama : </label>
+<input type="text" name="nama" id="nrp" required value="<?= $mhs["nama"]; ?>"><br>
 
-				<label for="email">Email :</label>
-				<input type="text" name="email" id="email" value="<?= $mhs["email"]; ?>"><br>
+<label for="alamat">Alamat : </label>
+<input type="text" name="alamat" id="nama" value="<?= $mhs["alamat"]; ?>">  <br>
 
-				<label for="jurusan">Jurusan :</label>
-				<input type="text" name="jurusan" id="jurusan" value="<?= $mhs["jurusan"]; ?>"><br>
+<label for="pendidikan">pendidikan :</label>
+<input type="text" name="pendidikan" id="email" value="<?= $mhs["pendidikan"]; ?>"><br>
 
-				<label for="gambar">Gambar :</label>
-				<input type="file" name="gambar" id="gambar" value="<?= $mhs["gambar"]; ?>"><br>
+<label for="pekerjaan">pekerjaan :</label>
+<input type="text" name="pekerjaan" id="jurusan" value="<?= $mhs["pekerjaan"]; ?>"><br>
 
-				<button type="submit" name="submit">Ubah Data!</button>
+					<input type="radio" name="jenis" value="pria" 
+						<?php 
+							if (strtolower( $mhs["jenis_kelamin"])=='pria') { ?>
+								checked="true" <?php } ?> > Pria &nbsp;
+					<input type="radio" name="jenis" value="wanita" 
+						<?php 
+							if (strtolower( $mhs["jenis_kelamin"])=='wanita') { ?>
+								checked="true" <?php } ?> > Wanita <br>
 
 
-	</form>
+<label for="status">Status :</label>
+<input type="status" name="status" id="email" value="<?= $mhs["statusz"]; ?>"><br>
 
 
+<button type="submit" name="submit">Tambah Data!</button>
+
+</form>
 
 
 </body>
